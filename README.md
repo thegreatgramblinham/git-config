@@ -69,6 +69,31 @@ git clone git@<server IP address>:/srv/git/projectname.git
 
 For additional information [check out the official git documentation.](https://git-scm.com/book/en/v2/Git-on-the-Server-Setting-Up-the-Server)
 
+# Creating a new private repo
+Assuming the directions were followed 'Creating a private git server', creating a new repository should just be a matter of logining in to the host machine, ensuring we are using the 'git' user account and then running the same steps we peformed to create our first repository.
+
+```
+# Make sure you're using the 'git' user (or whatever user manages the git server)
+su git
+# Move to where we host our repositories
+cd /srv/git
+# Make the repo directory
+mkdir newprojectname.git
+cd newprojectname.git
+# Create the empty repo
+git init --bare
+```
+
+Then a valid client git repo can:
+```
+git remote add origin git@<server IP address>:/srv/git/newprojectname.git
+```
+
+Once established, any other valid client can:
+```
+git clone git@<server IP address>:/srv/git/projectname.git
+```
+
 # Generate SSH keys
 Generating SSH keys is pretty straightforward. Simply run:
 ```

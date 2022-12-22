@@ -62,7 +62,10 @@ git remote add origin git@<server IP address>:/srv/git/projectname.git
 git push origin master
 ```
 
-That's it! Now any authorized user/key can pull down these changes from the server.
+That's it! Now any authorized user/key can pull down these changes from the server:
+```
+git clone git@<server IP address>:/srv/git/projectname.git
+```
 
 For additional information [check out the official git documentation.](https://git-scm.com/book/en/v2/Git-on-the-Server-Setting-Up-the-Server)
 

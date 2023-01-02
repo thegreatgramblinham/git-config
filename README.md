@@ -35,6 +35,15 @@ Now we need to get public keys for each user of this repository so that they can
 
 User ssh keys can be then appended to the 'authorized_keys' file, *one per line.* This will be the entire contents of the '.pub' key file.
 
+Note: For any key you do not want to have shell access, apend this to the front of the key line:
+```
+no-port-forwarding,no-X11-forwarding,no-agent-forwarding,no-pty
+```
+So the final line will look like:
+```
+no-port-forwarding,no-X11-forwarding,no-agent-forwarding,no-pty ssh-rsa AAAAB3NzaC1...
+```
+
 Now that we have one or more authorized users, we can create our first repository for them to access!
 ```
 # Move to where we will host our repositories

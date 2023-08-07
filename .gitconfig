@@ -1,0 +1,56 @@
+[core]
+    editor = vim
+    autocrlf = false
+[diff]
+    tool = vimdiff
+[merge]
+    tool = vimdiff
+[pull]
+    rebase = interactive
+[alias]
+    a = add
+    aa = add .
+    ap = add . -p
+    b = branch
+    ba = branch -al
+    bd = branch -D
+    c = commit
+    ca = commit --amend
+    cp = cherry-pick
+    ch = checkout
+    chb = checkout -b
+    d = diff
+    ds = diff --staged
+    dt = difftool
+    f = fetch --prune
+    ir = rebase -i
+    ira = rebase --abort
+    l = log
+    lfp = log --first-parent
+    lg = log --graph --oneline --all
+    ll = log --first-parent --pretty="format:%C(dim green) %<(9,trunc)%ar %C(bold magenta)%h %C(bold green)%<(12,trunc)%an %C(bold yellow)%s"
+    m = merge
+    ma = merge --abort
+    mt = mergetool
+    pl = pull
+    ps = push
+    r = restore
+    ra = restore .
+    rp = restore -p
+    rs = restore --staged
+    rsa = restore --staged .
+    rsp = restore --staged -p
+    pur = clean -x -d -f
+    sh = show
+    s = status
+    st = stash
+    sta = stash apply
+    stu = stash -u
+    std = stash drop
+    stl = stash list
+    sts = stash show -p
+[filter "lfs"]
+    clean = git-lfs clean -- %f
+    smudge = git-lfs smudge -- %f
+    process = git-lfs filter-process
+    required = true

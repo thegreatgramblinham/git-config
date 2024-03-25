@@ -1,6 +1,9 @@
 [core]
     editor = vim
     autocrlf = false
+[user]
+    name = Sam Hudock
+    email = shudock@altair.com
 [diff]
     tool = vimdiff
 [merge]
@@ -10,7 +13,8 @@
 [alias]
     a = add
     aa = add .
-    ap = add . -p
+    ap = add -p
+    apa = add -p .
     b = branch
     ba = branch -al
     bd = branch -D
@@ -34,14 +38,15 @@
     mt = mergetool
     pl = pull
     ps = push
+    pur = clean -x -d -f
     r = restore
     ra = restore .
     rp = restore -p
     rs = restore --staged
     rsa = restore --staged .
     rsp = restore --staged -p
-    pur = clean -x -d -f
     sh = show
+    shns = show --name-status
     s = status
     st = stash
     sta = stash apply

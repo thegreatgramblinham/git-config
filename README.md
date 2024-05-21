@@ -102,13 +102,23 @@ Once established, any other valid client can:
 ```
 git clone git@<server IP address>:/srv/git/projectname.git
 ```
+# Exporting an Existing Git Repository
+
+If a repository needs to be sent to a new remote, that can done on a bare repo by adding the remote under a new name and pushing to master. This should always work for a bare repo.
+
+However to avoid having to call multiple push commands for each remote, we can add multiple URLs to push to:
+```
+git remote set-url --add --push origin git://original/repo.git
+git remote set-url --add --push origin git://another/repo.git
+```
+NOTE: The first call will overwrite the current push remote. Hence the two calls to ensure both are present.
 
 # Generate SSH keys
 Generating SSH keys is pretty straightforward. Simply run:
 ```
 ssh-keygen
 ```
-By default, the created key will be stored in your ~/.ssh directory (id_rsa & id_rsa.pub). It is possible to specify another location if you wish.
+By default, the created key will be stored in your ~/.ssh directory (id_rsa & id_rsa.pub). It is possible to specify another location if you wish. 
 
 Entering a passphrase is optional. If you choose to, that passphrase will have to be entered for the key to be used. This is an additional layer of security if you want it. SSH keys without passphrases are usually generated for unattended operations like backups, but run the risk of anyone being able to access what it protects if the secret key is compromised.
 

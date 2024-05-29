@@ -3,7 +3,7 @@
     autocrlf = false
 [user]
     name = Sam Hudock
-    email = shudock@altair.com
+    email = samhudock@gmail.com
 [diff]
     tool = vimdiff
 [merge]

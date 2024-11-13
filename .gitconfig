@@ -1,6 +1,7 @@
 [core]
     editor = vim
     autocrlf = false
+    excludesFile = ~/.gitignore
 [user]
     name = Sam Hudock
     email = samhudock@gmail.com
